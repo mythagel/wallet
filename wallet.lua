@@ -3,34 +3,26 @@ s = 4
 h = math.sqrt(3)/2 * s
 f = 50
 
+turn(90)
+
 for i = 1, 2 do
 move(76)
-turn(90)
+turn(-90)
 move(110)
-turn(90)
+turn(-90)
 end
 
 total_width = 96
 total_height = 135
-
-if false then
-turn(180)
-move((total_width-76)/2)
-turn(-180)
-turn(-90)
-mid = (math.ceil((total_height-110) / h)/2) * h 
-move(mid)
-turn(90)
-end
 
 -- align 
 turn(180)
 move(4)
 turn(-180)
 
-turn(90)
-move(h/2)
 turn(-90)
+move(h/2)
+turn(90)
 
 -- move down
 pitch(90)
@@ -39,9 +31,8 @@ pitch(-90)
 
 for y = 1, 33 do
     print ("( row " .. y .. " )")
-    local even_row = y % 2 == 0
     local dir
-    if not even_row then
+    if y % 2 == 0 then
         dir = 1
     else
         dir = -1
